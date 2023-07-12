@@ -1,0 +1,3 @@
+[flake8]
+# Estilo de formatação
+max-line-length = 200
