@@ -7,7 +7,7 @@ exclude=
     dist,
     .venv
 extend_ignore=C901
-max-line-length=50
+max-line-length=200
 ignore = E203, E266, E501, W503, F403, F401
 max-complexity = 18
 select = B,C,E,F,W,T4,B9
