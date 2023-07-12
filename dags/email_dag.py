@@ -31,15 +31,11 @@ with DAG(
         task_id="task_email",
         to="willonf@icomp.ufam.edu.br",
         subject="Airflow pipeline error",
-        trigger_rule='one_failed',
+        trigger_rule="one_failed",
         html_content="""<h3>Ocorreu um erro no pipeline da DAG 'email_dag'</h3>""",
     )
 
-    task5 = BashOperator(
-        task_id="task5", bash_command="echo TASK5", trigger_rule="none_failed"
-    )
-    task6 = BashOperator(
-        task_id="task6", bash_command="echo TASK6", trigger_rule="none_failed"
-    )
+    task5 = BashOperator(task_id="task5", bash_command="echo TASK5", trigger_rule="none_failed")
+    task6 = BashOperator(task_id="task6", bash_command="echo TASK6", trigger_rule="none_failed")
 
     [task1, task2] >> task3 >> task4 >> [email_task, task5, task6]
